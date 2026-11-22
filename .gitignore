@@ -1,0 +1,25 @@
+# Maven
+target/
+dependency-reduced-pom.xml
+
+# Логи та результати роботи програми
+logs/
+output/
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+
+# Скомпільовані файли
+*.class
+out/
+
+# ОС
+.DS_Store
+Thumbs.db
