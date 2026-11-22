@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="flowers.xsd">
+    <Flower id="flower-1">
+        <Name>Троянда</Name>
+        <Soil>підзолистий</Soil>
+        <Origin>Персія</Origin>
+        <VisualParameters>
+            <StemColor>зелений</StemColor>
+            <LeafColor>темно-зелений</LeafColor>
+            <AverageSize unit="cm">80</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">18</Temperature>
+            <Photophilous>true</Photophilous>
+            <Watering unit="ml-per-week">1200</Watering>
+        </GrowingTips>
+        <Multiplying>живцями</Multiplying>
+    </Flower>
+    <Flower id="flower-2">
+        <Name>Орхідея</Name>
+        <Soil>ґрунтовий</Soil>
+        <Origin>Південно-Східна Азія</Origin>
+        <VisualParameters>
+            <StemColor>світло-зелений</StemColor>
+            <LeafColor>зелений</LeafColor>
+            <AverageSize unit="cm">45</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">22</Temperature>
+            <Photophilous>true</Photophilous>
+            <Watering unit="ml-per-week">500</Watering>
+        </GrowingTips>
+        <Multiplying>насінням</Multiplying>
+    </Flower>
+    <Flower id="flower-3">
+        <Name>Кактус</Name>
+        <Soil>дерново-підзолистий</Soil>
+        <Origin>Мексика</Origin>
+        <VisualParameters>
+            <StemColor>сіро-зелений</StemColor>
+            <LeafColor>сіро-зелений</LeafColor>
+            <AverageSize unit="cm">30</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">25</Temperature>
+            <Photophilous>true</Photophilous>
+            <Watering unit="ml-per-week">100</Watering>
+        </GrowingTips>
+        <Multiplying>насінням</Multiplying>
+    </Flower>
+    <Flower id="flower-4">
+        <Name>Фіалка</Name>
+        <Soil>ґрунтовий</Soil>
+        <Origin>Танзанія</Origin>
+        <VisualParameters>
+            <StemColor>зелений</StemColor>
+            <LeafColor>сіро-зелений</LeafColor>
+            <AverageSize unit="cm">12</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">21</Temperature>
+            <Photophilous>false</Photophilous>
+            <Watering unit="ml-per-week">300</Watering>
+        </GrowingTips>
+        <Multiplying>листям</Multiplying>
+    </Flower>
+    <Flower id="flower-5">
+        <Name>Герань</Name>
+        <Soil>підзолистий</Soil>
+        <Origin>Південна Африка</Origin>
+        <VisualParameters>
+            <StemColor>зелений</StemColor>
+            <LeafColor>світло-зелений</LeafColor>
+            <AverageSize unit="cm">40</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">20</Temperature>
+            <Photophilous>true</Photophilous>
+            <Watering unit="ml-per-week">700</Watering>
+        </GrowingTips>
+        <Multiplying>живцями</Multiplying>
+    </Flower>
+    <Flower id="flower-6">
+        <Name>Папороть</Name>
+        <Soil>дерново-підзолистий</Soil>
+        <Origin>Східна Азія</Origin>
+        <VisualParameters>
+            <StemColor>коричневий</StemColor>
+            <LeafColor>темно-зелений</LeafColor>
+            <AverageSize unit="cm">60</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">19</Temperature>
+            <Photophilous>false</Photophilous>
+            <Watering unit="ml-per-week">900</Watering>
+        </GrowingTips>
+        <Multiplying>насінням</Multiplying>
+    </Flower>
+    <Flower id="flower-7">
+        <Name>Алое</Name>
+        <Soil>ґрунтовий</Soil>
+        <Origin>Аравійський півострів</Origin>
+        <VisualParameters>
+            <StemColor>зелений</StemColor>
+            <LeafColor>блакитно-зелений</LeafColor>
+            <AverageSize unit="cm">55</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">24</Temperature>
+            <Photophilous>true</Photophilous>
+            <Watering unit="ml-per-week">200</Watering>
+        </GrowingTips>
+        <Multiplying>живцями</Multiplying>
+    </Flower>
+    <Flower id="flower-8">
+        <Name>Бегонія</Name>
+        <Soil>дерново-підзолистий</Soil>
+        <Origin>Бразилія</Origin>
+        <VisualParameters>
+            <StemColor>червонуватий</StemColor>
+            <LeafColor>зелений</LeafColor>
+            <AverageSize unit="cm">35</AverageSize>
+        </VisualParameters>
+        <GrowingTips>
+            <Temperature unit="celsius">20</Temperature>
+            <Photophilous>false</Photophilous>
+            <Watering unit="ml-per-week">600</Watering>
+        </GrowingTips>
+        <Multiplying>листям</Multiplying>
+    </Flower>
+</Flowers>

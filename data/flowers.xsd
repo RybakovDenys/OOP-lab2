@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+
+    <!-- ===== Прості типи ===== -->
+
+    <!-- Ідентифікатор квітки: тип ID, обмежений шаблоном -->
+    <xs:simpleType name="FlowerIdType">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="flower-[0-9]{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Переліки -->
+    <xs:simpleType name="SoilType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="підзолистий"/>
+            <xs:enumeration value="ґрунтовий"/>
+            <xs:enumeration value="дерново-підзолистий"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MultiplyingType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="листям"/>
+            <xs:enumeration value="живцями"/>
+            <xs:enumeration value="насінням"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Текстові значення з обмеженням довжини -->
+    <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ColorType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Числові значення з граничними значеннями -->
+    <xs:simpleType name="SizeValueType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="500"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TemperatureValueType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="-30"/>
+            <xs:maxInclusive value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="WateringValueType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ===== Комплексні типи ===== -->
+
+    <!-- Розмір рослини, в сантиметрах (обов'язковий атрибут unit) -->
+    <xs:complexType name="SizeType">
+        <xs:simpleContent>
+            <xs:extension base="SizeValueType">
+                <xs:attribute name="unit" type="xs:string" use="required" fixed="cm"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Температура, в градусах Цельсія -->
+    <xs:complexType name="TemperatureType">
+        <xs:simpleContent>
+            <xs:extension base="TemperatureValueType">
+                <xs:attribute name="unit" type="xs:string" use="required" fixed="celsius"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Полив, мл на тиждень -->
+    <xs:complexType name="WateringType">
+        <xs:simpleContent>
+            <xs:extension base="WateringValueType">
+                <xs:attribute name="unit" type="xs:string" use="required" fixed="ml-per-week"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Зовнішні параметри (декілька) -->
+    <xs:complexType name="VisualParametersType">
+        <xs:sequence>
+            <xs:element name="StemColor" type="ColorType"/>
+            <xs:element name="LeafColor" type="ColorType"/>
+            <xs:element name="AverageSize" type="SizeType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Умови вирощування (декілька) -->
+    <xs:complexType name="GrowingTipsType">
+        <xs:sequence>
+            <xs:element name="Temperature" type="TemperatureType"/>
+            <!-- true: світлолюбна, false: ні -->
+            <xs:element name="Photophilous" type="xs:boolean"/>
+            <xs:element name="Watering" type="WateringType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FlowerType">
+        <xs:sequence>
+            <xs:element name="Name" type="NameType"/>
+            <xs:element name="Soil" type="SoilType"/>
+            <xs:element name="Origin" type="NameType"/>
+            <xs:element name="VisualParameters" type="VisualParametersType"/>
+            <xs:element name="GrowingTips" type="GrowingTipsType"/>
+            <xs:element name="Multiplying" type="MultiplyingType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="FlowerIdType" use="required"/>
+    </xs:complexType>
+
+    <!-- ===== Кореневий елемент ===== -->
+    <xs:element name="Flowers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Flower" type="FlowerType" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
