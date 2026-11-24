@@ -29,12 +29,29 @@
 
 ## Збірка та запуск
 
-Потрібні JDK 17+ і Maven 3.8+.
+### Швидкий запуск напряму з файлу (Windows)
+
+- **Запуск програми:** двічі клікніть файл `run.bat` (або `build/run.bat`).
+- **Перезбірка проекту:** двічі клікніть файл `build.bat` (автоматично збере JAR і сформує папку `build/`, працює як з Maven, так і напряму через `javac`/`jar` без необхідності встановлювати Maven).
+
+Усередині папки `build/` уже зібрано все необхідне:
+- `greenhouse.jar` — виконуваний JAR-файл;
+- `data/` — XML, XSD та XSL файли;
+- `run.bat` — скрипт запуску з кодовою сторінкою UTF-8 та паузою перед закриттям консолі.
+
+### Запуск через консоль / Maven
+
+Потрібні JDK 17+ (Maven 3.8+ необов'язковий, якщо використовується `build.bat`).
 
 ```bash
+# Через Maven:
 mvn clean test              # тести + звіт покриття JaCoCo (target/site/jacoco/index.html)
 mvn clean package           # збірка target/greenhouse-1.0.0.jar
 java -jar target/greenhouse-1.0.0.jar
+
+# Або запуск готового build:
+cd build
+java -jar greenhouse.jar
 ```
 
 Необов'язкові аргументи: `[xml] [xsd] [xsl] [каталог результатів]`
@@ -62,11 +79,4 @@ java -jar target/greenhouse-1.0.0.jar
         <Flower id="flower-5">...</Flower>
     </підзолистий>
 </Flowers>
-```
-
-## Віддалений репозиторій
-
-```bash
-git remote add origin <URL репозиторію>
-git push -u origin main
 ```

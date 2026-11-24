@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
 
-    <!-- ===== Прості типи ===== -->
+    <!-- Прості типи -->
 
     <!-- Ідентифікатор квітки: тип ID, обмежений шаблоном -->
     <xs:simpleType name="FlowerIdType">
@@ -64,7 +64,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- ===== Комплексні типи ===== -->
+    <!-- Комплексні типи -->
 
     <!-- Розмір рослини, в сантиметрах (обов'язковий атрибут unit) -->
     <xs:complexType name="SizeType">
@@ -124,7 +124,7 @@
         <xs:attribute name="id" type="FlowerIdType" use="required"/>
     </xs:complexType>
 
-    <!-- ===== Кореневий елемент ===== -->
+    <!-- Кореневий елемент -->
     <xs:element name="Flowers">
         <xs:complexType>
             <xs:sequence>
